@@ -1,0 +1,12 @@
+gen.py
+test.py
+__pycache__
+*checkpoint*
+previous_model
+data/ml_*
+*.pyc
+*_log
+tmp.py
+*.txt
+*.npy
+

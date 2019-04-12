@@ -1,0 +1,14 @@
+train_batch_size = 64
+test_batch_size = 1
+clip_length = 8
+clip_num = 16
+image_size = 224
+num_outputs = 101
+max_iter = 40000000
+learning_rate = 0.001
+decay_steps = 2000
+decay_rate = 0.8
+save_step = 10000
+num_gpus = 3 
+summary_step = 10000
+summary_save_path = 'summary'
