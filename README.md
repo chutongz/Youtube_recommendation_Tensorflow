@@ -26,4 +26,4 @@ Also, other demography features can be added, as long as the featrues are feeded
 
 This code is recommended to run on only one GPU card. 
 
-Howvere, it supports multiple GPU cards training but can not lift up training speed LOL.
+Howevre, it supports multiple GPU cards training but can not lift up training speed LOL.
