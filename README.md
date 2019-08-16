@@ -1,4 +1,4 @@
-TensorFlow implementation of the paper "Deep Neural Networks for YouTube Recommendations"
+# TensorFlow implementation of the paper "Deep Neural Networks for YouTube Recommendations"
 
 
 
@@ -11,15 +11,19 @@ user id1:{"timestamp1":movie id1,"timestamp2": movie id2....}
 
 user id2:{"timestamp1":movie id1,"timestamp2": movie id2....}
 
-from the first watch history to the last history in time sort
-
+* sorted in time from the first watch history to the last history
 
 
 Feature used:
 
 watched history, example age
 
-Run:
+Also, other demography features can be added, as long as the featrues are feeded into correct placeholder
 
-python ml_train.py
+### Run:
 
+##### python ml_train.py
+
+This code is recommended to run on only one GPU card. 
+
+Howvere, it supports multiple GPU cards training but can not lift up training speed LOL.
