@@ -1,5 +1,5 @@
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '7'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import time
 from data.get_ml import ucf_data  
 import tensorflow as tf
@@ -51,7 +51,7 @@ class Multi_Trainer(object):
     
     def train(self):
 
-        with tf .Graph().as_default(), tf.device('/cpu:0'):
+        with tf .Graph().as_default():
 
             global_step = tf.train.create_global_step()
             history_placeholder = tf.placeholder(tf.int32, (self.batch_size*self.num_gpus, 9))
@@ -129,23 +129,6 @@ class Multi_Trainer(object):
                     start_time = time.time()
 
                 if step % 5000 == 0 :
-                    '''                   
-                    acc_value = 0
-                    for i in range(15):
-
-                        history,age,sex,example_age,label = self.data2.get()
-                        feed_dict = {history_placeholder:history,
-                                     age_placeholder:age,
-                                     sex_placeholder:sex,
-                                     example_age_placeholder:example_age,
-                                     label_placeholder:label}
-                        acc = sess.run(accuracy,feed_dict = feed_dict)
-                        acc_value = acc_value + acc
-                    acc_value = acc_value / 15.0
-                    print('After %d steps, the test accuracy is: %.5f'%(step,acc_value))
-                    str1 = 'steps:' + '\t' + str(step) + '\t' + 'accuracy:' + '\t' + str(acc_value) + '\n'
-                    f.write(str1)
-                    '''
                     saver.save(sess,'checkpoint1/model.ckpt',global_step = step)
 
             coord.request_stop()
